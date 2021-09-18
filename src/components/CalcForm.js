@@ -2,27 +2,33 @@ import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+// import DropdownButton from 'react-bootstrap/DropdownButton';
 
 
 class CalcForm extends Component {
 
     constructor(props) {
         super(props);
+        // console.log('CalcForm props: ')
+        // console.log(this.props)
+        this.handleInput = this.handleInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
-            savings: null,
-            houseprice: null,
-            loanvalue: null,
-            state: null,
+            savings: props.savings,
+            houseprice: props.houseprice,
+            // loanvalue: props.loanvalue,
+            res_state: props.res_state,
         };
+        // console.log('CalcForm state: ')
+        // console.log(this.state)
     }
 
     handleSubmit = e => {
         e.preventDefault()
-        console.log(this.state)
+        this.props.handleSubmit(this.state)
     }
 
-    handleInput = (event) => this.setState({[event.target.id]: event.target.value}, console.log(this.state))
+    handleInput = (event) => this.setState({[event.target.id]: event.target.value})
 
     render() {
         return (
@@ -46,11 +52,16 @@ class CalcForm extends Component {
                     </Form.Label>
                     <InputGroup>
                         <InputGroup.Text>$</InputGroup.Text>
-                        <Form.Control type='number' onChange={this.handleInput}/>
+                        <Form.Control type='number' defaultValue={this.state.houseprice} onChange={this.handleInput}/>
                     </InputGroup>
                 </Form.Group>
                 <br/>
-                <Form.Group controlId="state">
+                <Button variant="outline-primary" type="submit">
+                    Calculate LVR
+                </Button>
+                <br/>
+                <br/>
+                <Form.Group controlId="res_state">
                     <Form.Label>
                             State:
                     </Form.Label>
@@ -65,10 +76,6 @@ class CalcForm extends Component {
                 <Form.Group controlId="input3">
                     <Form.Check type="checkbox" label="First home buyer" />
                 </Form.Group>
-                <br/>
-                <Button variant="outline-primary" type="submit">
-                    Calculate LVR
-                </Button>
             </Form>
         );
     }
