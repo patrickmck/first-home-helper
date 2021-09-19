@@ -37,6 +37,7 @@ class Calculator extends React.Component {
 
     render() {
         let results_data = {
+            dep: this.state.savings,
             val: this.state.loan_val,
             lvr: this.state.loan_lvr
         }

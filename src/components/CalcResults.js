@@ -20,6 +20,7 @@ class CalcResults extends React.Component {
     render() {
         // console.log('results render:')
         // console.log(this.state)
+        let deposit = this.state.dep
         let loan_val = this.state.val
         let loan_lvr = (this.state.lvr === undefined) ? undefined : 100 * this.state.lvr
 
@@ -37,16 +38,18 @@ class CalcResults extends React.Component {
             <Row>{0.1*Math.round(10*loan_lvr)}%</Row>
         
         let results_data = (loan_val === undefined) ?
-            no_data_row :
+            '' :
             <CalcDataMaker
+                deposit={deposit}
                 loan_value={loan_val}
-                loan_rate={1.02}
-                loan_period={4}
+                loan_rate={1.035}
+                loan_period={30}
             />
 
         return(
             <Container>
                 <Row>
+                    <Col xs={1}/>
                     <Col>
                         {loan_info_row}
                         {loan_val_row}
