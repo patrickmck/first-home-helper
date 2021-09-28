@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Switch, useRouteMatch, useParams} from "react-router-dom";
+import {Route, Switch, useRouteMatch} from "react-router-dom";
 import NotFound from "../pages/NotFoundPage";
 import GuideSidebarItems from "./GuideSidebarItems";
 import GuideRoutesContent from "./GuideRoutesContent";

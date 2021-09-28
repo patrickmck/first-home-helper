@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import Container from 'react-bootstrap/Container';
-import Calculator from './components/Calculator';
+// import Calculator from './components/Calculator';
 import Routes from './components/navigation/Routes'
 
 

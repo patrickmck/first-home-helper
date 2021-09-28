@@ -1,5 +1,3 @@
-import GuideRoutesContent from "./GuideRoutesContent";
-import { withRouter } from 'react-router-dom';
 
 const GuideSidebarItems = [
     {
