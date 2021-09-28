@@ -31,7 +31,7 @@
 .App-container {
   margin-top: 50px;
   max-width: 1200px;
-  color: #aa00ae;
+  /* color: #aa00ae; */
 }
 
 @keyframes App-logo-spin {
