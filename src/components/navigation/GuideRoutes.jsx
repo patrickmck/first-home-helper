@@ -1,8 +1,7 @@
 import React from "react";
 import {Route, Switch, useRouteMatch} from "react-router-dom";
-import NotFound from "../pages/NotFoundPage";
-import GuideSidebarItems from "./GuideSidebarItems";
-import GuideRoutesContent from "./GuideRoutesContent";
+import NotFound from "../pages/NotFound";
+import { GuideRoutesContent, GuideSidebarItems } from "./GuideRoutesContent";
 
 const GuideRoutes = () => {
     let match = useRouteMatch()

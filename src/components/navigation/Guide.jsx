@@ -8,7 +8,7 @@ function Guide(props) {
         <Row>
             <Col xs={2}><GuideSidebar/></Col>
             <Col>
-                <p>This is the guide section.</p>
+                <p>This is a floating header above the guide section.</p>
                 <br/>
                 <GuideRoutes/>
             </Col>

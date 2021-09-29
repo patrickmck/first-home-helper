@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import NotFound from "../pages/NotFoundPage";
+import NotFound from "../pages/NotFound";
 import Guide from "./Guide.jsx";
 import Lingo from "./Lingo.jsx";
 import { Row } from "react-bootstrap";
@@ -11,7 +11,7 @@ function Routes() {
         <BrowserRouter>
             <Row>
                 <h4><a href='/'>First Home Helper</a></h4>
-                <i>Australia's <u>only</u> comprehensive guide for first home buyers</i>
+                <i>Australia's only comprehensive guide for first home buyers</i>
             </Row>
             <br/><hr/>
             <Row>

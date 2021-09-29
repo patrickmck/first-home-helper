@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
-import GuideSidebarItems from './GuideSidebarItems';
+import { GuideSidebarItems } from './GuideRoutesContent';
 
 
 function GuideSidebar(props, {defaultActive}) {
