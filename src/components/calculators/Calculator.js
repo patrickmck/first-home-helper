@@ -13,6 +13,8 @@ class Calculator extends React.Component {
             houseprice: '',
             loan_val: undefined,
             loan_lvr: undefined,
+            loan_rate: 1.035,
+            loan_term: 30,
             // Calculated from CalcForm input
             res_state: '',
             // Provided to data generator
@@ -39,13 +41,19 @@ class Calculator extends React.Component {
         let results_data = {
             dep: this.state.savings,
             val: this.state.loan_val,
-            lvr: this.state.loan_lvr
+            lvr: this.state.loan_lvr,
+            // loan_rate: this.state.loan_rate,
+            // loan_term: this.state.loan_term,
         }
         
         return(
             <Row>
                 <Col xs={4}>
-                <CalcForm handleSubmit={this.handleSubmit}/>
+                <CalcForm
+                    loan_rate={this.state.loan_rate}
+                    loan_term={this.state.loan_term}
+                    handleSubmit={this.handleSubmit}
+                />
                 </Col>
                 <Col>
                 <CalcResults data={results_data} />

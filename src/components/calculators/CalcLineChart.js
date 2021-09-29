@@ -39,13 +39,14 @@ class CalcLineChart extends React.Component {
             .append("g")
             .attr("transform", `translate(${inputs.margin.left},${inputs.margin.top})`)
         
+        // eslint-disable-next-line
         let data = inputs.data
 
         let xAxis = d3.scaleLinear()
             .range([0, inputs.fig_width]);
 
         let yAxis = d3.scaleLinear()
-            .range([inputs.fig_height, 0]);
+            .range([0,inputs.fig_height]);
         
         inputs.xaxis = xAxis
         inputs.yaxis = yAxis
@@ -70,7 +71,7 @@ class CalcLineChart extends React.Component {
         // console.log(data)
         let fig = inputs.fig_select
 
-        // remove previously drawn lines (rather than binding the data)
+        // remove previously drawn lines (rather than properly binding the data)
         fig.selectAll('.paytypes')
             .remove()
         fig.selectAll('.leglines')

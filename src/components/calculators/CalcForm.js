@@ -13,11 +13,14 @@ class CalcForm extends Component {
         // console.log(this.props)
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        console.log(props)
         this.state = {
             savings: props.savings,
             houseprice: props.houseprice,
             // loanvalue: props.loanvalue,
             res_state: props.res_state,
+            rate: props.loan_rate,
+            term: props.loan_term
         };
         // console.log('CalcForm state: ')
         // console.log(this.state)
@@ -48,7 +51,7 @@ class CalcForm extends Component {
                 <br/>
                 <Form.Group controlId='houseprice'>
                     <Form.Label>
-                            Target price for the house:
+                        Target price for the house:
                     </Form.Label>
                     <InputGroup>
                         <InputGroup.Text>$</InputGroup.Text>
@@ -63,7 +66,7 @@ class CalcForm extends Component {
                 <br/>
                 <Form.Group controlId="res_state">
                     <Form.Label>
-                            State:
+                        State:
                     </Form.Label>
                     <Form.Control as='select' defaultValue="Choose ..." onChange={this.handleInput}>
                         <option>Choose ...</option>
@@ -73,9 +76,36 @@ class CalcForm extends Component {
                     </Form.Control>
                 </Form.Group>
                 <br/>
-                <Form.Group controlId="input3">
+                <Form.Group controlId="firstbuyer">
                     <Form.Check type="checkbox" label="First home buyer" />
                 </Form.Group>
+                <br/>
+                <Form.Group controlId="rate">
+                    <Form.Label>
+                        Interest rate:
+                    </Form.Label>
+                    <InputGroup>
+                        <Form.Control type='number' defaultValue={this.state.rate} onChange={this.handleInput} />
+                        <InputGroup.Text>%</InputGroup.Text>
+                    </InputGroup>
+                </Form.Group>
+                <br/>
+                <Form.Group controlId="mortgage-term">
+                    <Form.Label>
+                        Mortgage term:
+                    </Form.Label>
+                    <InputGroup>
+                        <Form.Control type='number' defaultValue={this.state.term} onChange={this.handleInput} />
+                        <InputGroup.Text>years</InputGroup.Text>
+                    </InputGroup>
+                </Form.Group>
+                <br/>
+                <Button variant="outline-primary" type="submit">
+                    Calculate repayments
+                </Button>
+                <br/>
+                {/* <p>Interest rate: 3.5%</p>
+                <p>Mortgage term: 30 years</p> */}
             </Form>
         );
     }
