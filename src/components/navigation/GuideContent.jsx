@@ -33,13 +33,13 @@ export const GuideSidebarItems = [
 ];
 
 /**
- * GuideRoutesContent is a component which expects to be provided with a `path` prop
- * which it can then match up to the appropriate content-generating function via the
- * `guide_contents` object created in the constructor.
+ * GuideContent is a component which expects to be provided with a `path` prop which
+ * it can then match up to the appropriate page-content-generating function via the
+ * `guide_contents` object created in the constructor. It simply calls this function.
  * 
  * If `path` or its content-generating function is not found, returns the 404 page.
  */
-export class GuideRoutesContent extends React.Component {
+export class GuideContent extends React.Component {
     constructor(props) {
         super(props)
         this.guide_contents = {}
